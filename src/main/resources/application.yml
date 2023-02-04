@@ -1,0 +1,47 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pointage_db?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  application:
+    name: pointage
+
+  #cloud:
+  #  discovery:
+  #   enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  profiles:
+    active: "@spring.profiles.active@"
+
+logging:
+  file:
+    name: /Users/mac/Documents/M2/JEE/projects/web-spring-thymeleaf/spring-thymeleaf.log
+#eureka:
+# endpoints:
+#    service-url:
+# #     defaultZone: http://localhost:8761/eureka
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#       include: '*'
+#
+
+#info:
+#  application:
+#    name: auth-microservice
+#    version: '@project.version@'
+
+# jwt:
+#   secret: "420baf6b-fd57-4d1f-92bc-107772e601a1d5cfd091-8a7b-4156-9d9c-1601a88820faf3ae1ff2-607d-4cce-be50-cf084634252f"
